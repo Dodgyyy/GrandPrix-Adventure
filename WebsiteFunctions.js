@@ -1,18 +1,27 @@
 var myGamePiece;
+var myBackground;
 var myObstacles = [];
 
+window.onload = function() {
+    startGame()
+}
+
 function startGame() {
-    myGamePiece = new component(30, 30, "blue", 10, 120);
+    myGamePiece = new component(50, 50, "giphy.gif", 10, 120, "image");
+    myBackground = new component(656, 270, "game-background.jpg", 0, 0, "background")
+    myBackground2 = new component(656, 270, "game-background.jpg", 656, 0, "background")
     myGameArea.start();
 }
 
+console.log(document.getElementById("game"))
+console.log(myGamePiece)
+
 var myGameArea = {
-    canvas : document.createElement("canvas"),
+    canvas : document.getElementById("game"),
     start : function() {
       this.canvas.width = 480;
       this.canvas.height = 270;
       this.context = this.canvas.getContext("2d");
-      document.body.insertBefore(this.canvas, document.body.childNodes[0]);
       this.frameNo = 0;
       this.interval = setInterval(updateGameArea, 20);
       window.addEventListener('keydown', function (e) {
@@ -30,7 +39,12 @@ var myGameArea = {
     }
   }
 
-function component(width, height, color, x, y) {
+function component(width, height, color, x, y, type) {
+    this.type = type;
+    if (type == "image" || type == "background") {
+        this.image = new Image();
+        this.image.src = color;
+    }
     this.width = width;
     this.height = height;
     this.speedX = 0;
@@ -39,18 +53,21 @@ function component(width, height, color, x, y) {
     this.y = y;
     this.update = function() {
         ctx = myGameArea.context;
-        ctx.fillStyle = colour;
-        ctx.fillRect(this.x, this.y, this.width, this.height);
-    }
-    this.update = function() {
-        ctx = myGameArea.context;
-        ctx.fillStyle = color;
-        ctx.fillRect(this.x, this.y, this.width, this.height);
+        if (type == "image" || type == "background") {
+            ctx.drawImage(this.image,
+                this.x,
+                this.y,
+                this.width, this.height); 
+        }
+            else {
+                ctx.fillStyle = color;
+                ctx.fillRect(this.x, this.y, this.width, this.height);
+            }
     }
     this.newPos = function() {
         this.x += this.speedX;
-        this.y += this.speedY;        
-    }    
+        this.y += this.speedY;
+    }   
     this.crashWith = function(otherobj) {
         var myleft = this.x;
         var myright = this.x + (this.width);
@@ -89,6 +106,18 @@ function updateGameArea() {
         myObstacles.push(new component(10, height, "green", x, 0));
         myObstacles.push(new component(10, x - height - gap, "green", x, height + gap));
     }
+    myBackground.speedX = -1;
+    if (myBackground.x < -656) {
+        myBackground.x = 656
+    }
+    myBackground.newPos();
+    myBackground.update();
+    myBackground2.speedX = -1;
+    if (myBackground2.x < -656) {
+        myBackground2.x = 656
+    }
+    myBackground2.newPos();
+    myBackground2.update();
     for (i = 0; i < myObstacles.length; i += 1) {
         myObstacles[i].x += -1;
         myObstacles[i].update();
@@ -106,4 +135,8 @@ function updateGameArea() {
 function everyinterval(n) {
     if ((myGameArea.frameNo / n) % 1 == 0) {return true;}
     return false;
+}
+
+function Refresh() {
+    window.location='Game1.html';
 }
