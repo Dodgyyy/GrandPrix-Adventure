@@ -8,7 +8,7 @@ window.onload = function() {
 }
 
 function startGame() {
-    myGamePiece = new component(50, 50, "giphy.gif", 10, 20, "image");
+    myGamePiece = new component(50, 50, "giphy.gif", 10, 120, "image");
     myBackground = new component(656, 270, "game-background.jpg", 0, 0, "background")
     myBackground2 = new component(656, 270, "game-background.jpg", 656, 0, "background")
     myScore = new component("20px", "sans-serif", "white", 280, 40, "text")
@@ -140,8 +140,8 @@ function updateGameArea() {
     myScore.update();
     myGamePiece.newPos();
     myGamePiece.update();
-    if (myGameArea.frameNo == 1000) {
-        window.location.href = "Level_Passed.html"
+    if (myGameArea.frameNo == 2000) {
+        window.location.href = "Final.html"
     }
 }
 
@@ -151,7 +151,7 @@ function everyinterval(n) {
 }
 
 function Refresh() {
-    window.location='Game1.html';
+    window.location='Game2.html';
 }
 
 document.addEventListener('keydown', function(e) {
@@ -168,7 +168,6 @@ document.addEventListener('keydown', function(e) {
         musicPlay()
     }
 });
-
 function musicPlay() {
     document.getElementById('music').volume = 0.2;
     document.getElementById('music').play();

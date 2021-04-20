@@ -1,5 +1,5 @@
 canvas {
-    border: 1px solid #d3d3d3;
+    border: 1px solid #9a3ca2;
     background-color: #f1f1f1;
 }
 
@@ -29,15 +29,120 @@ canvas {
 
 body {
     font-family: sans-serif;
+    margin: 0;
 }
 
 .game {
     display: flex;
     align-items: center;
     justify-content: center; 
+    margin-top: 10%;
 }
 
 .start {
+    background: purple;
+    overflow: hidden;
+    width: 200px;
+    text-align: center;
+    padding: 13px 15px;
+    font-size: 16px;
+    border: 0;
+    transition: all 0.5s;
+    border-radius: 10px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    margin-top: 15%;
+}
+
+.start a {
+    color: #ffffff;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.start a:hover {
+    background-color: purple;
+    color: white;
+}
+
+.background {
+    height: 100vh;
+}
+
+.background:before {
+    display: block;
+    background-image: url(Game_page_background.jpg);
+    filter: blur(2px);
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+}
+
+.ref {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3px;
+}
+
+.InstructionsH1{
+    margin-left: 5px;
+    color: white;
+    text-decoration: underline;
+}
+
+.InstructionsP1 {
+    margin-left: 5px;
+    color: white;
+}
+
+.InstructionsH2{
+    margin-left: 5px;
+    color: white;
+    text-decoration: underline;
+}
+
+.InstructionsP2 {
+    margin-left: 5px;
+    color: white;
+}
+
+.Game1H2 {
+    margin-left: 5px;
+    color: white;
+    text-decoration: underline;
+}
+
+.Game1P1 {
+    margin-left: 5px;
+    color: white;
+}
+
+.LevelH1 {
+    margin-left: 5px;
+    color: white;
+}
+
+.LevelP1 {
+    margin-left: 5px;
+    color: white;
+}
+
+.confetti {
+    height: 100vh;
+    background-image: url(confetti.gif);
+    background-size: cover;
+}
+
+.lvl2but {
     background:#333;
     overflow: hidden;
     width: 200px;
@@ -52,16 +157,116 @@ body {
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
+    margin-top: 15%;
 }
 
-.start a {
+.lvl2but a {
     color: #ffffff;
     text-align: center;
     cursor: pointer;
     text-decoration: none;
 }
 
-.start a:hover {
+.lvl2but a:hover {
     background-color: #333;
     color: white;
+}
+
+.indexP1 {
+    color: white;
+    margin-left: 5px;
+}
+
+.indexH2 {
+    color: white;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.indexP2 {
+    color: white;
+    margin-left: 5px;
+}
+
+.indexP3 {
+    color: white;
+    margin-left: 5px;
+}
+
+.footer {
+    padding:40px 0;
+    background-color: transparent;
+    color: white;
+    bottom: 10px;
+    position: fixed;
+    width: 100%;
+}
+
+.footer ul {
+    padding:0;
+    text-align:center;
+    font-size:18px;
+    line-height:1.6;
+    margin-bottom:0;
+}
+
+.footer li {
+    display: inline;
+    padding: 0 10px;
+    list-style:none;
+}
+
+.footer ul a {
+    color: inherit;
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.footer ul a:hover {
+    opacity:1;
+}
+
+.footer {
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+.footer > a {
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    margin: 0 8px;
+    color: inherit;
+    opacity: 0.75;
+}
+
+.footer > a:hover {
+    opacity: 0.9;
+}
+
+.footer .fakeright {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 12px;
+    color: #aaa;
+    margin-bottom: 0;
+}
+
+.AboutH2 {
+    margin-left: 5px;
+    color: white;
+}
+
+.AboutP1 {
+    margin-left: 5px;
+    color: white;
+}
+
+.ForumP1 {
+    color: white;
+    text-align: center;
 }
