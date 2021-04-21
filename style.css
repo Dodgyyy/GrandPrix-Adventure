@@ -97,43 +97,51 @@ body {
     margin-left: 5px;
     color: white;
     text-decoration: underline;
+    text-align: center;
 }
 
 .InstructionsP1 {
     margin-left: 5px;
     color: white;
+    text-align: center;
 }
 
 .InstructionsH2{
     margin-left: 5px;
     color: white;
     text-decoration: underline;
+    text-align: center;
 }
 
 .InstructionsP2 {
     margin-left: 5px;
     color: white;
+    text-align: center;
 }
 
 .Game1H2 {
     margin-left: 5px;
     color: white;
     text-decoration: underline;
+    text-align: center;
 }
 
 .Game1P1 {
     margin-left: 5px;
     color: white;
+    text-align: center;
 }
 
 .LevelH1 {
     margin-left: 5px;
     color: white;
+    text-align: center;
 }
 
 .LevelP1 {
     margin-left: 5px;
     color: white;
+    text-align: center;
 }
 
 .confetti {
@@ -175,22 +183,26 @@ body {
 .indexP1 {
     color: white;
     margin-left: 5px;
+    text-align: center;
 }
 
 .indexH2 {
     color: white;
     text-align: center;
     text-decoration: underline;
+    text-align: center;
 }
 
 .indexP2 {
     color: white;
     margin-left: 5px;
+    text-align: center;
 }
 
 .indexP3 {
     color: white;
     margin-left: 5px;
+    text-align: center;
 }
 
 .footer {
@@ -267,6 +279,18 @@ body {
 }
 
 .ForumP1 {
+    color: white;
+    text-align: center;
+}
+
+.FailG1H1 {
+    margin-left: 5px;
+    color: white;
+    text-align: center;
+}
+
+.FailG1P1 {
+    margin-left: 5px;
     color: white;
     text-align: center;
 }
