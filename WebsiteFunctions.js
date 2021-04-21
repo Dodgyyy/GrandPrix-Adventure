@@ -8,7 +8,7 @@ window.onload = function() {
 }
 
 function startGame() {
-    myGamePiece = new component(50, 50, "giphy.gif", 10, 20, "image");
+    myGamePiece = new component(40, 40, "giphy.gif", 0, 0, "image");
     myBackground = new component(656, 270, "game-background.jpg", 0, 0, "background")
     myBackground2 = new component(656, 270, "game-background.jpg", 656, 0, "background")
     myScore = new component("20px", "sans-serif", "white", 280, 40, "text")
